@@ -2,6 +2,8 @@ import express, { Request, Response } from "express"; //importiamo la libreria
 import UserController from "./controllers/Controllersusers";
 const user = new UserController();
 const app = express();
+const port = process.env.PORT || 3000;
+const baseURL = process.env.BASE_URL || "http//localhost";
 
 const server = express.json();
 app.use(server);
@@ -22,6 +24,6 @@ app.post("/signup", (req: Request, res: Response) => {
     .json({ message: "registrato con successo", user: user.users });
 });
 
-app.listen(3000, function () {
-  console.log(`Server is running on http://localhost:3000`);
+app.listen(port, function () {
+  console.log(`Server is running on ${baseURL}:${port}`);
 });
