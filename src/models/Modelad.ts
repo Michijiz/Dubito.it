@@ -17,11 +17,9 @@ export class ModelAd {
     title: string,
     description: string,
     price: number,
-    createdAt: string,
     sold: boolean,
     urlPhoto: string,
     status: string,
-    referenceKeyUserPurchase: number,
     category: string,
     address: string
   ) {
@@ -30,11 +28,11 @@ export class ModelAd {
     this.title = title;
     this.description = description;
     this.price = price;
-    this.createdAt = new Date(createdAt);
+    this.createdAt = new Date();
     this.sold = sold;
     this.urlPhoto = urlPhoto;
     this.status = status;
-    this.referenceKeyUserPurchase = referenceKeyUserPurchase;
+    this.referenceKeyUserPurchase = 0;
     this.category = category;
     this.address = address;
   }
